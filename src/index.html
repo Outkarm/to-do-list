@@ -2,32 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <title>Wbpack Exercise</title>
+    <script
+      src="https://kit.fontawesome.com/7c259eb882.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>To Do List</title>
   </head>
-
   <body>
-    <main id="to-do-container">
-      <header class="to-do-head">
-        <h1>Today's To Do</h1>
-        <button>
-          <span class="material-symbols-outlined"> autorenew </span>
-        </button>
-      </header>
+    <div class="to-do-list-app-container">
+      <hr />
+      <p id="app-label-tag">
+        Today's To Do
+        <span id="reset-button"><i class="fa-solid fa-rotate"></i></span>
+      </p>
+      <hr />
 
-      <form class="add-to-do-list" action="">
-        <input type="text" name="" id="task" placeholder="Type your task" />
-        <button class="add-btn">
-          <span class="material-symbols-outlined"> keyboard_return </span>
-        </button>
-      </form>
+      <input
+        type="Text"
+        id="add-new-task"
+        placeholder="Add to your list..."
+        required
+      /><span><i class="fa-regular fa-turn-down-left"></i></span>
 
-      <div class="to-do-list"></div>
-      <p class="clear-all"><a href="#">clear all completed</a></p>
-    </main>
+      <hr />
+      <div id="to-do-list"></div>
+      <div id="clear-all-completed">
+        <button type="button" id="clr-completed-btn">
+          Clear all completed
+        </button>
+      </div>
+    </div>
   </body>
 </html>

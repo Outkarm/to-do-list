@@ -1,6 +1,6 @@
-import allTask from "./tasks-array-module.js";
-import localStorageUpdate from "./dynamic-storage-update.js";
-import reOrderTasks from "./re-order-tasks.js";
+import allTask from './tasks-array-module.js';
+import localStorageUpdate from './dynamic-storage-update.js';
+import reOrderTasks from './re-order-tasks.js';
 
 const removeNode = (obj, currNode) => {
   let flag = 0;

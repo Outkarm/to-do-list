@@ -1,29 +1,29 @@
-import "./style.css";
-import allTask from "../modules/tasks-array-module.js";
-import { populateAllTaskArray } from "../modules/create-tasks-array.js";
-import displayTaskNode, { toDoList } from "../modules/display-task-node.js";
-import localStorageUpdate from "../modules/dynamic-storage-update.js";
-import reOrderTasks from "../modules/re-order-tasks.js";
+import './style.css';
+import allTask from '../modules/tasks-array-module.js';
+import { populateAllTaskArray } from '../modules/create-tasks-array.js';
+import displayTaskNode, { toDoList } from '../modules/display-task-node.js';
+import localStorageUpdate from '../modules/dynamic-storage-update.js';
+import reOrderTasks from '../modules/re-order-tasks.js';
 
-const taskInput = document.querySelector("#add-new-task");
-const resetBtn = document.querySelector("#reset-button");
-const clearCompleted = document.querySelector("#clr-completed-btn");
+const taskInput = document.querySelector('#add-new-task');
+const resetBtn = document.querySelector('#reset-button');
+const clearCompleted = document.querySelector('#clr-completed-btn');
 
 allTask.forEach((e) => {
   displayTaskNode(e);
 });
 
-taskInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
+taskInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
     if (taskInput.value.length <= 1) {
       return;
     }
     populateAllTaskArray(taskInput.value);
-    taskInput.value = "";
+    taskInput.value = '';
   }
 });
 
-resetBtn.addEventListener("click", () => {
+resetBtn.addEventListener('click', () => {
   localStorage.clear();
   allTask.splice(allTask[0]);
   while (toDoList.firstChild) {
@@ -31,7 +31,7 @@ resetBtn.addEventListener("click", () => {
   }
 });
 
-clearCompleted.addEventListener("click", () => {
+clearCompleted.addEventListener('click', () => {
   const filterComplete = allTask.filter((e) => e.completed === false);
   reOrderTasks(filterComplete);
   localStorageUpdate(filterComplete);

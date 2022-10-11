@@ -1,33 +1,40 @@
-import "./style.css";
+import './style.css';
+import allTask from '../modules/tasks-array-module.js';
+import { populateAllTaskArray } from '../modules/create-tasks-array.js';
+import displayTaskNode, { toDoList } from '../modules/display-task-node.js';
+import localStorageUpdate from '../modules/dynamic-storage-update.js';
+import reOrderTasks from '../modules/re-order-tasks.js';
 
-const toDoList = [
-  {
-    description: "study javascript",
-    completed: false,
-    index: 0,
-  },
-  {
-    description: "complete my task",
-    completed: false,
-    index: 1,
-  },
-  {
-    description: "avoid repeating the week",
-    completed: true,
-    index: 2,
-  },
-];
+const taskInput = document.querySelector('#add-new-task');
+const resetBtn = document.querySelector('#reset-button');
+const clearCompleted = document.querySelector('#clr-completed-btn');
 
-const toDoListContainer = document.querySelector(".to-do-list");
-const task = () => {
-  for (let i = 0; i < toDoList.length; i += 1) {
-    const item = document.createElement("div");
-    item.innerHTML = `
-    <div class="container" id="${toDoList[i].index}"><input type="checkbox" name=""check-box" id="check-box"><br>
-    <p class="descripton">${toDoList[i].description}</p>
-    </div>
-    `;
-    toDoListContainer.appendChild(item);
+allTask.forEach((e) => {
+  displayTaskNode(e);
+});
+
+taskInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    if (taskInput.value.length <= 1) {
+      return;
+    }
+    populateAllTaskArray(taskInput.value);
+    taskInput.value = '';
   }
-};
-task();
+});
+
+resetBtn.addEventListener('click', () => {
+  localStorage.clear();
+  allTask.splice(allTask[0]);
+  while (toDoList.firstChild) {
+    toDoList.removeChild(toDoList.lastChild);
+  }
+});
+
+clearCompleted.addEventListener('click', () => {
+  const filterComplete = allTask.filter((e) => e.completed === false);
+  reOrderTasks(filterComplete);
+  localStorageUpdate(filterComplete);
+
+  window.location.reload();
+});

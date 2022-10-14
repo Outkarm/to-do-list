@@ -6,13 +6,16 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
+- Webpack
+- Jest
+- Visual Studio Code 
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://outkarm.github.io/to-do-list/dist)
 
 ## Getting Started
 
@@ -33,13 +36,19 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-## Author
+## Authors
 
 👤 **John Kpordje**
 
 - GitHub: [@Outkarm](https://github.com/Outkarm)
 - Twitter: [@outkarm](https://twitter.com/outkarm)
 - LinkedIn: [John Kpordje](https://www.linkedin.com/in/john-kpordje-866749241/)
+
+**John Adibe**
+
+- Github: [@Johnadibe](https://github.com/Johnadibe)
+- Twitter: [@JohnAdibe2](https://Twitter.com/JohnAdibe2)
+- LinkedIn: [John Adibe](https://www.linkedin.com/in/john-adibe-400b36166/)
 
 ## 🤝 Contributing
 

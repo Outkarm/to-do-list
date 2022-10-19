@@ -5,9 +5,9 @@ import displayTaskNode, { toDoList } from '../modules/display-task-node.js';
 import localStorageUpdate from '../modules/dynamic-storage-update.js';
 import reOrderTasks from '../modules/re-order-tasks.js';
 
-const taskInput = document.querySelector('#add-new-task');
+const taskInput = document.querySelector('#task');
 const resetBtn = document.querySelector('#reset-button');
-const clearCompleted = document.querySelector('#clr-completed-btn');
+const clearCompleted = document.querySelector('#clear-btn');
 
 allTask.forEach((e) => {
   displayTaskNode(e);

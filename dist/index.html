@@ -8,30 +8,28 @@
       src="https://kit.fontawesome.com/7c259eb882.js"
       crossorigin="anonymous"
     ></script>
-    <title>To Do List</title>
+    <title>The To Do List</title>
   <script defer src="main.js"></script></head>
   <body>
-    <div class="to-do-list-app-container">
+    <div class="to-do-container">
       <hr />
-      <p id="app-label-tag">
-        Today's To Do
+      <p id="label">
+        Your To Do
         <span id="reset-button"><i class="fa-solid fa-rotate"></i></span>
       </p>
       <hr />
-
+      <br />
       <input
         type="Text"
-        id="add-new-task"
+        id="task"
         placeholder="Add to your list..."
         required
       /><span><i class="fa-regular fa-turn-down-left"></i></span>
-
+      <br />
       <hr />
       <div id="to-do-list"></div>
-      <div id="clear-all-completed">
-        <button type="button" id="clr-completed-btn">
-          Clear all completed
-        </button>
+      <div id="clear-the-completed-task">
+        <button type="button" id="clear-btn">Clear The completed</button>
       </div>
     </div>
   </body>
